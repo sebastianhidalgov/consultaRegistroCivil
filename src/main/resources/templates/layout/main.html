@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>FISA</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet" />
+
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+	<link href="css/scj.css" rel="stylesheet" />
+	
+
+	
+</head>
+
+<body>
+	<div id="wrapper">
+	
+	
+	
+	        <nav class="navbar-default navbar-static-side" role="navigation" th:fragment="sidebar">
+	        
+	          <script th:inline="javascript">
+								/*<![CDATA[*/
+				
+	   	 jQuery(document).ready(function($) {
+		     cargarMenu();		  	
+			    
+	       });
+										
+
+		function cargarMenu() {
+			 var menuflag = /*[[${menuflag}]]*/
+
+			 
+				    if(menuflag == 1){
+					   $(".menuflag1").addClass("active");
+					   $(".menuflagCollapse8").addClass("in");				    	 
+				    }else if(menuflag == 2){
+				    	 $(".menuflag2").addClass("active");
+				    }else if(menuflag == 3){
+				    	 $(".menuflag3").addClass("active");
+				    	 $(".menuflagCollapse3").addClass("in");				    	 
+				    }else if(menuflag == 4){
+				    	 $(".menuflag4").addClass("active");	
+				    	 $(".menuflagCollapse4").addClass("in");		    	 
+				    }else if(menuflag == 5){
+				    	 $(".menuflag5").addClass("active");
+				    	 $(".menuflagCollapse5").addClass("in");
+			    	 
+				    }else if(menuflag == 6){
+				    	 $(".menuflag6").addClass("active");
+				    	 $(".menuflagCollapse6").addClass("in");
+			    	 
+				    }else if(menuflag == 7){
+				    	 $(".menuflag7").addClass("active");
+				    	 $(".menuflagCollapse7").addClass("in");			    	 
+				    }
+
+
+			 
+		
+
+			   		var subMenu = /*[[${subMenu}]]*/
+
+				   if(subMenu == 1){
+					   $(".subMenu1").addClass("active");
+				    }else if(subMenu == 2){
+				    	$(".subMenu2").addClass("active");
+				    }else if(subMenu == 3){
+				    	$(".subMenu3").addClass("active");
+				    	 $(".subMenu3flagCollapse3").addClass("in");				    	
+				    }else if(subMenu == 4){
+				    	$(".subMenu4").addClass("active");			    	
+				    }else if(subMenu == 5){
+				    	$(".subMenu5").addClass("active");			    	
+				    }else if(subMenu == 6){
+				    	$(".subMenu6").addClass("active");
+				    }else if(subMenu == 7){
+				    	$(".subMenu7").addClass("active");
+				    }else if(subMenu == 8){
+				    	$(".subMenu8").addClass("active");
+				    }else if(subMenu == 9){
+				    	$(".subMenu9").addClass("active");
+				    }else if(subMenu == 10){
+				    	$(".subMenu10").addClass("active");
+				    }else if(subMenu == 11){
+				    	$(".subMenu11").addClass("active");
+				    }else if(subMenu == 12){
+				    	$(".subMenu12").addClass("active");
+				    }else if(subMenu == 13){
+				    	$(".subMenu13").addClass("active");
+				    }else if(subMenu == 14){
+				    	$(".subMenu14").addClass("active");
+				    }else if(subMenu == 15){
+				    	$(".subMenu15").addClass("active");
+				    }else if(subMenu == 16){
+				    	$(".subMenu16").addClass("active");
+				    }else if(subMenu == 17){
+				    	$(".subMenu17").addClass("active");
+				    }
+
+					
+
+
+			   		
+			   		var subSubMenu = /*[[${subSubMenu}]]*/
+
+				   if(subSubMenu == 1){
+					   $(".subSubMenu1").addClass("active");
+				    }else if(subSubMenu == 2){
+				    	$(".subSubMenu2").addClass("active");
+				    }else if(subSubMenu == 3){
+				    	$(".subSubMenu3").addClass("active");
+				    }else if(subSubMenu == 4){
+				    	$(".subSubMenu4").addClass("active");
+				    }
+
+
+				    
+			  
+
+		
+			   	
+			   		   
+				   
+		}				
+									
+  				
+  			  /*]]>*/
+  				</script>
+	
+	
+	        	        
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+					<!-- 
+                    <li class="nav-header">
+                        <div class="dropdown profile-element" style="text-align: center;"> 
+                        	<div class="scj-logo">
+                        	SCJ
+                            </div>
+                            
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Macroproceso fiscalizaci&oacute;n</strong>
+                             </span> <span class="text-muted text-xs block">Virtual</span> </span> 
+                        </div>
+                        <div class="logo-element scj-logo-small">
+                            SCJ
+                        </div>
+                    </li>
+                    -->
+					<li class="nav-header" style="background-color: #193d4f;background-image: none;">
+						<div class="dropdown profile-element" style="text-align: center;" > 
+							<img th:src="@{/img/logo3.PNG}" style="width: 82px;"/>		
+
+						</div>
+                    </li>          
+                    <li class="menuflag1" th:each="rol : ${session.auth.roles}" th:if="${rol} == 'normativa'">
+						<!--  <a href="layouts.html"  th:href="@{/}"> <i class="fa fa-edit"></i> <span class="nav-label">Normativa</span></a>  -->						 
+						 <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Normativa</span><span class="fa arrow"></span></a>
+						 <ul class="nav nav-second-level collapse menuflagCollapse8">
+                            <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'normativa'"  class="subMenu14" ><a th:href="@{/normativa}">Normativa</a></li>  
+                            <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'requisitoNormativo'"  class="subMenu15" ><a th:href="@{/requisitoNormativo}">Requisito normativo</a></li>                                    
+                        </ul>
+
+                    </li>
+                    
+                      <li class="menuflag2"  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'mantenedorEvento'"  >
+                         <a href="layouts.html"  th:href="@{/mantenedorEvento}"> <i class="fa fa-th-large"></i> <span class="nav-label">Mantenedor evento</span></a>
+                    </li> 
+                    
+                     <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'planificacionFiscalizacion' or ${rol} == 'auditorFiscalizacion'" class="menuflag6" >
+                        <a href="#"><i class="fa fa-briefcase"></i> <span class="nav-label">Planificación de la Fiscalización</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse menuflagCollapse6">
+                            <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'planificacionBaseAnual'"  class="subMenu8" ><a th:href="@{/planificacionBaseAnual}">Planificación Anual Base</a></li>  
+                            <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'administradorProgramaTrabajo' or ${rol} == 'auditorFiscalizacion' "  class="subMenu9" ><a th:href="@{/administradorProgramaTrabajo}">Administrador programa de trabajo</a></li>     
+							<li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'asignacionFiscalizacion'"  class="subMenu16" ><a th:href="@{/asignacionFiscalizacion}">Programación mensual de fiscalizaciones</a></li>                              
+                        </ul>
+                     </li>
+                     
+                     
+                                      
+                    <li class="menuflag7" th:each="rol : ${session.auth.roles}" th:if="${rol} == 'ejecucionFiscalizacionModulo' or ${rol} == 'auditorFiscalizacion'" >
+                         <a href="#"> <i class="fa fa-cogs"></i> <span class="nav-label">Ejecuci&oacute;n de la fiscalizaci&oacute;n</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse menuflagCollapse7">
+	                            <li class="subMenu12"  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'programaTrabajoEjecucion' or ${rol} == 'auditorFiscalizacion'" ><a th:href="@{/programaTrabajoEjecucion}" >Programa trabajo</a></li>
+	                            <li class="subMenu13"  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'informeTecnicoEjecucion'" ><a th:href="@{/informeTecnicoEjecucion}" >Informe t&eacute;cnico</a></li>
+								<li class="subMenu17"  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'registroHallazgoEjecucion'" ><a th:href="@{/registroHallazgo}" >Registro hallazgo</a></li>
+                        	</ul>
+                     </li> 
+                     
+                    
+                    <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'registroHallazgo' or ${rol} == 'auditorFiscalizacion'" class="menuflag5" >
+                        <a href="#"><i class="fa fa-briefcase"></i> <span class="nav-label">Registro de requisitos</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse menuflagCollapse5">
+                            <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'registroRequisitoHallazgo' or ${rol} == 'auditorFiscalizacion'"  class="subMenu5" ><a th:href="@{/registroRequisitos}">Registro de requisitos</a></li>
+                          
+                          <!--/* 
+                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'oficioHallazgo'" class="subMenu6" ><a th:href="@{/oficioHallazgo}">Oficios</a></li>
+                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'alertaHallazgo'" class="subMenu7" ><a th:href="@{/alertaHallazgo}">Alerta</a></li>
+                           */--> 		     
+                                                               
+                        </ul>
+                      </li>
+                                      
+                     <li class="menuflag4"  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'evaluacionMeritoHallazgo' or ${rol} == 'auditorSanciones'" >
+                         <a href="#"> <i class="fa fa-th-large"></i> <span class="nav-label">Evaluaci&oacute;n merito  sancionatorio</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse menuflagCollapse4">
+	                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'bandejaEntradaMeritoSancionatorio' or ${rol} == 'auditorSanciones'"  class="subMenu10" ><a th:href="@{/evaluacionMeritoHallazgo}">Bandeja Entrada</a></li>
+	                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'actaMeritoSancionatorio' or ${rol} == 'auditorSanciones'"  class="subMenu11" ><a th:href="@{/mantenedorActa}">Acta</a></li>
+                        	</ul>
+                     </li> 
+                    
+   
+                    
+                    
+                     <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'sanciones' or ${rol} == 'auditorSanciones'" class="menuflag3" >
+                        <a href="#"><i class="fa fa-briefcase"></i> <span class="nav-label">Sanciones</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse menuflagCollapse3">
+                            <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'bandejaEntradaSancion' or ${rol} == 'auditorSanciones'"  class="subMenu1" ><a th:href="@{/enCurso}">Bandeja de entrada</a></li>
+                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'reporteSancion' or ${rol} == 'auditorSanciones'" class="subMenu2" ><a th:href="@{/reporte}">Reporte</a></li>
+                            
+		                     <li  th:each="rol : ${session.auth.roles}" th:if="${rol} == 'mantenedor' or ${rol} == 'auditorSanciones'" class="subMenu3" >
+		                        <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">Mantenedores</span><span class="fa arrow"></span></a>
+		                        <ul class="nav nav-third-level collapse subMenu3flagCollapse3">
+		                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'alertaSancion'" class="subSubMenu1" ><a href="#">Alertas</a></li>		                            
+		                            <!--/*      <li class="subSubMenu2" ><a href="#">Definir</a></li> */-->
+		                            <li th:each="rol : ${session.auth.roles}" th:if="${rol} == 'modificacionFaseSancion' or ${rol} == 'auditorSanciones'" class="subSubMenu4" ><a th:href="@{/modificacionFase}">Modificaci&oacute;n Fase</a></li>
+		                            
+		                        </ul>
+		                    </li>
+                            
+                        </ul>
+                      </li>
+                    
+            
+                </ul>
+
+            </div>
+        </nav>
+        
+        
+	        
+        
+	</div>
+	
+
+	  
+	
+	
+</body>
+</html>

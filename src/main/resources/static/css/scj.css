@@ -1,0 +1,46 @@
+.scj-logo{
+	font-size: 45px;
+    color: royalblue;
+    text-shadow: rgb(255, 255, 255) 1px 1px 0px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight:400;
+}
+
+.scj-logo-small{
+	font-size: 35px;
+    color: royalblue;
+    text-shadow: rgb(255, 255, 255) 1px 1px 0px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight:400;
+}
+
+.scj-box-select{
+	height:170px;
+	overflow:hidden;
+}
+
+.scj-box-select:hover{
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+.scj-justify{
+	text-align: justify;
+}
+
+.btn-template-outlined {
+    background: none;
+    border: 1px solid #467fbf !important;
+    color: #467fbf;
+    border-radius: 0 !important;
+    text-decoration: none;
+  }
+  
+  .btn-template-outlined:hover, .btn-template-outlined:focus {
+    background: #467fbf;
+    color: #fff !important;
+  }
+
+  

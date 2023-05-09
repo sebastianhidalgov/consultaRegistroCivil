@@ -1,0 +1,188 @@
+.error_login{
+	font-weight: bold;
+	color: red;
+}
+
+.fileinput-filename {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    /* new lines */
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cargando{
+	background-image: url("../img/facebook.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	min-height: 200px;
+	opacity: 0.6;
+	border-radius: 5px;
+	background-color: #AAA;
+	z-index: 1000;
+}
+
+.encogerBuscarPef{
+	min-height: 80px !important;
+}
+
+
+.boton-visible-validacion{
+	overflow: inherit !important;
+}
+
+.control-label-izquierda{
+	padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.control-label-centro{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.quitar-espacio-load{
+   position: relative !important;
+   min-height: 40px !important;
+}
+
+.quitar-modificacion-especial{
+   position: relative !important;
+   min-height: 90px !important;
+}
+
+/* se implementa para corregir el problema del pugin que se integro con datatable que no le permitia ajustarse */
+.tamanio-datatable{
+	width: 100% !important;
+}
+
+.tab-bordes{
+	border-color: #e7eaec;
+ /*	border: 1px solid; */
+ 	border-style: solid solid solid;
+	border-radius: 4px;
+}
+
+.color-tab{
+	background: #f3f3f4;
+}
+
+.body-color{
+	    background-color: #f3f3f4
+}
+
+.efecto-mouse{
+  cursor:pointer
+}
+
+.efecto-mouse:hover{
+  background-color: rgba(59, 255, 183, 0.22);
+}
+
+
+
+
+.redips-drag:hover {
+    width: 87px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.select2-container{ 
+	width: 100% !important;     
+}
+
+.select2-dropdown {  
+  z-index: 9999 !important;
+}
+
+.select2-selection{
+    height: 34px !important;
+    font-size: 13px !important;
+    padding-top: 2px !important;
+}
+
+.don-mpfis{
+	border: 1px solid #ccc;
+    border-radius: 134px;
+    padding: 11px 11px;
+    font-size: 139px;
+    margin-bottom: 10px;
+    border-color: black;"	
+}
+
+.don_macro_fiscalizacion{
+	border: 1px solid #ccc;
+    color: #ccc;
+    border-radius: 34px;
+    padding: 7px 3px;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.radio {
+    padding-left: 20px;
+
+}
+
+
+.formularioDragable {
+    background: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.accionIcon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.cortar{
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+  overflow:hidden; 
+}
+
+.cortar:hover {
+  width: 75%;
+  white-space: initial;
+  overflow:visible;
+  cursor: pointer;
+}
+
+
+
+.formularioDragable2{
+    background: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+.select2-selection--multiple{
+    overflow: hidden !important;
+    height: auto !important;
+}
+
+.agrandarcheckbox {
+    width: 41px;
+    height: 32px;
+    border: 2px solid;
+    border-radius: 5px;
+    /*checkbox border color*/
+    border-color: #737373;
+}

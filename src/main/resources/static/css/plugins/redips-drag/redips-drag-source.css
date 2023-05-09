@@ -1,0 +1,38 @@
+/* drag objects (DIV inside table cells) */
+.redips-drag {
+	/*position: relative !important; */
+	cursor: move !important;
+	margin: 2px auto !important;
+	z-index: 10 !important;
+	background-color: #f0f0f0 !important;
+	text-align: left !important;
+	padding: 5px !important;
+	font-size: 12px !important;
+	width: 100% !important;
+	-moz-border-radius: 10px !important;
+	-webkit-border-radius: 10px !important;
+	border-radius: 10px !important;
+}
+
+/* drag objects (DIV inside table cells) */
+.redips-drag:hover {
+	background-color: white !important;
+	font-weight: bold;
+	cursor: move !important;
+	z-index: 10 !important;
+	/*width: 200px !important;*/
+}
+
+.redips-trash {
+	text-align: center;
+	font-weight: bold;
+}
+
+.color-tr {
+	background-color: #f5f5f6;
+	font-weight: bold;
+}
+
+.definirAncho{
+	width: 200px !important;
+}

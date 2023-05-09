@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FISA</title>
+</head>
+<body>
+
+	<th:block th:fragment="main">
+	<!-- Mainly scripts -->
+    <script th:src="@{/js/jquery.js}" src="js/jquery.js"></script>
+    <!-- jQuery UI -->
+    <script th:src="@{/js/plugins/jquery-ui/jquery-ui.min.js}" src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    
+    <!-- esta funcion esta hecha para que no choque con la funcion de boostrap  -->
+    
+    <script>
+        $.widget.bridge('uitooltip', $.ui.tooltip);
+    </script>
+    
+    
+    <script th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+    <script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}" src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}" src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+      <!-- datapicker -->
+    <script th:src="@{/js/plugins/datapicker/moment-with-locales.js}" src="js/plugins/datapicker/moment-with-locales.js"></script>
+    <script th:src="@{/js/plugins/datapicker/bootstrap-datetimepicker.js}" src="js/plugins/datapicker/bootstrap-datetimepicker.js"></script>
+    <script th:src="@{/js/plugins/datapicker/prettify-1.0.min.js}" src="js/plugins/datapicker/prettify-1.0.min.js"></script>
+    <script th:src="@{/js/plugins/datapicker/base.js}" src="js/plugins/datapicker/base.js"></script>        
+    
+     <!-- validaciones validationEngine -->
+
+     <script th:src="@{/js/plugins/validaciones/jquery.validationEngine.js}" src="js/plugins/validaciones/jquery.validationEngine.js"></script>
+	 <script th:src="@{/js/plugins/validaciones/jquery.validationEngine-es.js}" src="js/plugins/validaciones/jquery.validationEngine-es.js"></script>
+    
+      <!--  durationPicker -->
+
+    <script th:src="@{/js/plugins/duration-picker/duration-picker.min.js}" src="js/plugins/duration-picker/duration-picker.min.js"></script>
+
+
+    	  <script th:inline="javascript">
+			/*<![CDATA[*/
+				
+			  $(function(){
+					$( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
+						 console.log(event);
+						 console.log(jqxhr);
+						 console.log(settings);
+						 console.log(thrownError);
+
+                         var urlIncial = /*[[@{/}]]*/ ;
+                       
+                         bootbox.alert("<div style=\"text-align:center;\"><i class=\"icon-emo-displeased don_macro_fiscalizacion\"></i><p style=\"margin-top: 15px;\">!Vaya!, algo no ha salido como se esperaba, por favor intente nuevamente o contacte a soporte. </p> <p>"+thrownError+"</p></div>");
+                          
+                         window.open(urlIncial, '_blank');
+                         
+				
+					});
+				});
+										
+			
+				        
+			 /*]]>*/
+			</script>	
+    
+    
+	</th:block>
+	
+	<th:block th:fragment="flot">
+    <!-- Flot -->
+    <script th:src="@{/js/plugins/flot/jquery.flot.js}" src="js/plugins/flot/jquery.flot.js"></script>
+    <script th:src="@{/js/plugins/flot/jquery.flot.tooltip.min.js}" src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script th:src="@{/js/plugins/flot/jquery.flot.spline.js}" src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script th:src="@{/js/plugins/flot/jquery.flot.resize.js}" src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script th:src="@{/js/plugins/flot/jquery.flot.pie.js}" src="js/plugins/flot/jquery.flot.pie.js"></script>
+    
+    
+	</th:block>
+	
+	<th:block th:fragment="alerta">
+	<!-- sweetalert2  -->
+	<script th:src="@{/js/plugins/sweetalert2/sweetalert2.js}" src="js/plugins/sweetalert2/sweetalert2.js"></script>	
+		    
+    <!--Bootbox  -->
+     <script th:src="@{/js/plugins/bootbox/bootbox.min.js}" src="js/plugins/bootbox/bootbox.min.js"></script>
+    
+    <!-- notify --> 
+    <script th:src="@{/js/plugins/notify/bootstrap-notify.min.js}" src="js/plugins/notify/bootstrap-notify.min.js"></script>
+     
+     
+	</th:block>
+	<!-- ----------------------------------------- Otros ---------------------------------->
+	
+	<th:block th:fragment="otros">
+    <!-- Peity -->
+    <script th:src="@{/js/plugins/peity/jquery.peity.min.js}" src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script th:src="@{/js/demo/peity-demo.js}" src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script th:src="@{/js/inspinia.js}" src="js/inspinia.js"></script>
+    <script th:src="@{/js/plugins/pace/pace.min.js}" src="js/plugins/pace/pace.min.js"></script>	
+
+
+    <!-- GITTER -->
+    <script th:src="@{/js/plugins/gritter/jquery.gritter.min.js}" src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script th:src="@{/js/plugins/sparkline/jquery.sparkline.min.js}" src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script th:src="@{/js/demo/sparkline-demo.js}" src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script th:src="@{/js/plugins/chartJs/Chart.min.js}" src="js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- Toastr -->
+    <script th:src="@{/js/plugins/toastr/toastr.min.js}" src="js/plugins/toastr/toastr.min.js"></script>
+    
+     <!-- Loading -->
+    <script th:src="@{/js/plugins/loading/loadingoverlay.min.js}" src="js/plugins/loading/loadingoverlay.min.js"></script>
+    
+    <!-- Select2 -->
+    
+        <script th:src="@{/js/plugins/select2/select2.full.js}" src="js/plugins/select2/select2.full.js"></script>
+   	    <script th:src="@{/js/plugins/select2/i18n/es.js}" src="js/plugins/select2/i18n/es.js"></script>
+    
+    <!-- Datatable -->
+    
+     <script th:src="@{/js/plugins/datatable/datatables.min.js}" src="js/plugins/datatable/datatables.min.js"></script>
+     <script th:src="@{/js/plugins/datatable/lenguaje_es.js}" src="js/plugins/datatable/lenguaje_es.js"></script>
+     <script th:src="@{/js/plugins/datatable/dataTables.rowsGroup.js}" src="js/plugins/datatable/dataTables.rowsGroup.js"></script>
+     
+     <script th:src="@{/js/plugins/datatable/dataTables.buttons.min.js}" src="js/plugins/datatable/dataTables.buttons.min.js"></script>    
+     <script th:src="@{/js/plugins/datatable/buttons.colVis.min.js}" src="js/plugins/datatable/buttons.colVis.min.js"></script>
+     
+         	<!-- icheck -->
+	 <script th:src="@{/js/plugins/iCheck/icheck.min.js}" src="js/plugins/iCheck/icheck.min.js"></script>
+    
+    <!-- jasny -->
+    
+     <script th:src="@{/js/plugins/jasny/jasny-bootstrap.min.js}" src="/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+    
+    
+    <!-- SUMMERNOTE -->
+    
+     <script th:src="@{/js/plugins/summernote/summernote.js}" src="js/plugins/summernote/summernote.js"></script>
+     <script th:src="@{/js/plugins/summernote/summernote-es-ES.js}" src="js/plugins/summernote/summernote-es-ES.js"></script>  
+    
+
+    
+    
+      </th:block>
+      
+</body>
+</html>
