@@ -8,24 +8,38 @@ import cl.gob.scj.consultaRegistroCivil.dto.CertificadoNacimientoDTO;
 @Service
 public class CertificadoNacimiento {
 
-    private final RestTemplate restTemplate;
+    private final RestTemplate clienteRest;
 
     public CertificadoNacimiento(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+        this.clienteRest = restTemplate;
     }
 
-    public String consumeEndpoint() {
-   
-        String url = "http://172.16.10.237:8080/SRCeICertificmadoNacimientoServiceREST/service";
-        
+    public String consumeCertificadoNacimiento(String run, String dv) {
+        String url = "http://172.16.10.237:8080/SRCeICertificadoNacimientoServiceREST/service";
         CertificadoNacimientoDTO certificadoNacimiento = new CertificadoNacimientoDTO();
         certificadoNacimiento.setTramite("0001");
-        certificadoNacimiento.setRut("18602729");
-        certificadoNacimiento.setDv("9");
-
-        ResponseEntity<String> response = restTemplate.postForEntity(url, certificadoNacimiento, String.class);
+        certificadoNacimiento.setRut(run);
+        certificadoNacimiento.setDv(dv);
+    
+        ResponseEntity<String> response = clienteRest.postForEntity(url, certificadoNacimiento, String.class);
         String responseBody = response.getBody();
         System.out.println(responseBody);
         return responseBody;
     }
+
+    public String consumeCertificadoInformacionBasica(String run, String dv) {
+        String url = "http://172.16.10.237:8080/SRCeIInformacionPersonalINPREST/service";
+        CertificadoNacimientoDTO certificadoNacimiento = new CertificadoNacimientoDTO();
+        certificadoNacimiento.setTramite("0001");
+        certificadoNacimiento.setRut(run);
+        certificadoNacimiento.setDv(dv);
+    
+        ResponseEntity<String> response = clienteRest.postForEntity(url, certificadoNacimiento, String.class);
+        String responseBody = response.getBody();
+        System.out.println(responseBody);
+        return responseBody;
+    }
+
+
+    
 }

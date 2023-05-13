@@ -1,92 +1,212 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSS -->
     <th:block th:include="layout/css :: css"></th:block>
     <!-- FIN CSS -->
+
     <th:block th:include="layout/scripts :: main"></th:block>
+
+    <th:block th:include="layout/scripts :: flot"></th:block>
+
+    <th:block th:include="layout/scripts :: alerta"></th:block>
+
+    <th:block th:include="layout/scripts :: otros"></th:block>
 
     <title>ConsultaRegistroCivil</title>
 </head>
 
-<body>
+<body style="background-color: white;">
 
-</body>
+    <div class="container mt-10">
 
-<div class="container mt-5">
+        <div class="row justify-content-md-center">
 
-    <div class="row">
+            <div class="col-md-6 " style=" float: left; text-align: left;">
+                <form id="myForm" method="POST" action="/endpoint">
 
-        <div class="col-md-6 offset-md-3">
-            <form method="POST" action="/endpoint">
+                    <div class="form-group">
 
-                <div class="form-group">
+                        <label style="color: white;">Seleccione el servicio a consultar:</label>
 
-                    <label>Seleccione el servicio a consultar:</label>
+                        <div class="form-check">
 
-                    <div class="form-check">
+                            <input class="form-check-input" type="radio" name="parametro3" id="opcion1" value="opcion1"
+                                required checked="true"
+                                style="border: 1px solid black; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">
 
-                        <input class="form-check-input" type="radio" name="parametro3" id="opcion1" value="opcion1"
-                            required checked="true">
+                            <label class="form-check-label" for="opcion1">Certificado de
+                                Nacimiento</label>
 
-                        <label class="form-check-label" for="opcion1">Certificado de
-                            Nacimiento</label>
+                        </div>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input" type="radio" name="parametro3" id="opcion2" value="opcion2"
+                                required style="border: 1px solid black; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">
+
+                            <label class="form-check-label" for="opcion2">Información
+                                Básica</label>
+
+                        </div>
 
                     </div>
 
-                    <div class="form-check">
+                    <div class="form-group">
 
-                        <input class="form-check-input" type="radio" name="parametro3" id="opcion2" value="opcion2"
-                            required>
+                        <label for="parametro1">Run:</label>
 
-                        <label class="form-check-label" for="opcion2">Información
-                            Básica</label>
+                        <input type="text" class="form-control" id="run" name="parametro1" required maxlength="8"
+                            style="border: 1px solid black; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">
 
                     </div>
 
-                </div>
+                    <div class="form-group">
 
-                <div class="form-group">
+                        <label for="parametro2">Dv:</label>
 
-                    <label for="parametro1">Run:</label>
+                        <input type="text" class="form-control" id="dv" name="parametro2" required maxlength="1"
+                            style="border: 1px solid black; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">
 
-                    <input type="text" class="form-control" id="parametro1" name="parametro1" required maxlength="8">
+                    </div>
 
-                </div>
+                    <button id="btn-consultar" class="btn btn-primary">Consultar
+                        datos</button>
+                    <div id="respuesta"></div>
 
-                <div class="form-group">
 
-                    <label for="parametro2">Dv:</label>
+                </form>
 
-                    <input type="text" class="form-control" id="parametro2" name="parametro2" required maxlength="1">
 
-                </div>
-
-                <button type="submit" class="btn btn-primary" formaction="">Consultar
-                    datos</button>
-
-            </form>
+            </div>
 
 
         </div>
 
 
     </div>
+    <div class="col-12">
+        <div class="table-responsive ibox-content" id="divConsultaCertificado">
+            <table id="tablaSolicitudesCertificado" style="width: 100%;" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellido Materno</th>
+                        <th>Apellido Paterno</th>
+                        <th>NacionalidadNacimiento</th>
+                        <th>AñoInscripción</th>
+                        <th>Registro</th>
+                        <th>Circunscripción</th>
+                        <th>Nro inscripción</th>
+                        <th>Run</th>
+                        <th>F. Nacimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="table-responsive ibox-content" id="divConsultaCertificadoInformacionBasica" style="display: none;">
+            <table id="tablaSolicitudesCertificadoInformacionBasica" style="width: 100%;" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellido Materno</th>
+                        <th>Apellido Paterno</th>
+                        <th>Profesion</th>
+                        <th>Estado Civil</th>
+                        <th>Sexo</th>
+                        <th>circunscripcionNacimiento</th>
+                        <th>nacionalidad</th>
+                        <th>Run</th>
+                        <th>F. Nacimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-</div>
-
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
 
 
 </html>
 
 <script th:inline="javascript">
 
+function obtenerRadioSeleccionado() {
+  var opcionSeleccionada = $("input[name='parametro3']:checked").val();
+  return opcionSeleccionada;
+}
+
+$(document).ready(function () {
+    $('#btn-consultar').click(function (e) {
+        e.preventDefault();
+        var run = $('#run').val();
+        var dv = $('#dv').val();
+        var opcionSeleccionada = obtenerRadioSeleccionado();
+        console.log(opcionSeleccionada);
+        console.log(run);
+        $.ajax({
+            type: "POST",
+            url: "/consultarCertificado",
+            data: {rut: run, dv: dv, parametro3: opcionSeleccionada},
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                var certificado = data.mensaje["soap:Envelope"]["soap:Body"]["sobre"]["cuerpo"]["documento"]["CertificadoNacimiento"];
+                var tbody = $('#tablaSolicitudesCertificado tbody');
+                tbody.empty();
+                console.log(certificado);
+                var tr = $('<tr>');
+                tr.append($('<td>').text(certificado.Nombre.nombres));
+                tr.append($('<td>').text(certificado.Nombre.apellidoPaterno));
+                tr.append($('<td>').text(certificado.Nombre.apellidoMaterno));
+                tr.append($('<td>').text(certificado.nacionalidadNacimiento));
+                tr.append($('<td>').text(certificado.agnoInscripcion));
+                tr.append($('<td>').text(certificado.registro));
+                tr.append($('<td>').text(certificado.Circunscripcion));
+                tr.append($('<td>').text(certificado.nroInscripcion));
+                tr.append($('<td>').text(certificado.run.numero + '-' + certificado.run.dv));
+                tr.append($('<td>').text(certificado.fechaNacimiento));
+                tbody.append(tr);
+            },
+            error: function () {
+                alert('Error en la petición AJAX');
+            },
+            complete: function () {
+                crearTabla();
+            }
+        });
+    });
+});
 
 
 
+
+    function crearTabla() {
+  
+        var tablaCertificado = $('#tablaSolicitudesCertificado')
+            .DataTable({
+                buttons: [{
+                    extend: 'excelHtml5',
+                    filename: 'solicitudes_certificado',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }, 'colvis'],
+
+            });
+        tablaCertificado.buttons().container().appendTo(
+            '#tablaSolicitudesCertificado_wrapper .row:eq(0)');
+    }
 </script>

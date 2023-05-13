@@ -5,7 +5,14 @@ public class CertificadoNacimientoDTO{
     private String tramite;
     private String rut;
     private String dv;
+    private String servicio;
 
+    public String getServicio() {
+        return servicio;
+    }
+    public void setServicio(String servicio) {
+        this.servicio = servicio;
+    }
     public String getTramite() {
         return tramite;
     }
@@ -25,4 +32,5 @@ public class CertificadoNacimientoDTO{
         this.dv = dv;
     }
 
+    
 }
